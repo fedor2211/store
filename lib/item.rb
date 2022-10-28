@@ -6,4 +6,9 @@ class Item
     @amount = params[:amount]
     @name = params[:name]
   end
+
+  def update(params)
+    @amount = params[:amount] if params.key?(:amount)
+    @price = params[:price] if params.key?(:price)
+  end
 end
