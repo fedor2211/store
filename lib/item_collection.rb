@@ -28,9 +28,9 @@ class ItemCollection
     when :title
       @collection.sort_by!(&:to_s)
     when :price
-      @collection.sort_by! { |item| item.price.to_i }
+      @collection.sort_by!(&:price)
     when :amount
-      @collection.sort_by! { |item| item.amount.to_i }
+      @collection.sort_by!(&:amount)
     end
     @collection.reverse! if params[:order] == :desc
   end

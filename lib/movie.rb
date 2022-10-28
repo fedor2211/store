@@ -4,7 +4,7 @@ class Movie < Item
   attr_accessor :year, :director
 
   def self.from_file(path)
-    data = File.readlines(path, chomp: true).first(5)
+    data = File.readlines(path, chomp: true)
     new(
       title: data[0],
       director: data[1],

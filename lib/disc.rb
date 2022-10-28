@@ -4,7 +4,7 @@ class Disc < Item
   attr_accessor :album, :artist, :genre, :year
 
   def self.from_file(path)
-    data = File.readlines(path, chomp: true).first(6)
+    data = File.readlines(path, chomp: true)
     new(
       album: data[0],
       artist: data[1],

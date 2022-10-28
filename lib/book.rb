@@ -4,7 +4,7 @@ class Book < Item
   attr_accessor :genre, :author
 
   def self.from_file(path)
-    data = File.readlines(path, chomp: true).first(5)
+    data = File.readlines(path, chomp: true)
     new(
       title: data[0],
       genre: data[1],
