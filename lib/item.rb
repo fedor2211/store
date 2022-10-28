@@ -6,13 +6,13 @@ class Item
   end
 
   def initialize(params)
-    @price = params[:price]
-    @amount = params[:amount]
+    @price = params[:price].to_i
+    @amount = params[:amount].to_i
     @name = params[:name]
   end
 
   def update(params)
-    @amount = params[:amount] if params.key?(:amount)
-    @price = params[:price] if params.key?(:price)
+    @amount = params[:amount].to_i if params.key?(:amount)
+    @price = params[:price].to_i if params.key?(:price)
   end
 end
