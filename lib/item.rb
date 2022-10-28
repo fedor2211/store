@@ -1,14 +1,13 @@
 class Item
-  attr_reader :price, :amount, :name
+  attr_reader :price, :amount
 
   def self.from_file(path)
     raise NotImplementedError
   end
 
   def initialize(params)
-    @price = params[:price].to_i
-    @amount = params[:amount].to_i
-    @name = params[:name]
+    @price = params[:price]
+    @amount = params[:amount]
   end
 
   def update(params)

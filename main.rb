@@ -11,6 +11,6 @@ puts
 collection.sort!(by: :price, order: :asc)
 puts collection.to_a
 puts
-collection.sort!(by: :name, order: :asc)
+collection.sort!(by: :title, order: :asc)
 puts collection.to_a
 puts
