@@ -4,5 +4,6 @@ class Item
   def initialize(params)
     @price = params[:price]
     @amount = params[:amount]
+    @name = params[:name]
   end
 end
