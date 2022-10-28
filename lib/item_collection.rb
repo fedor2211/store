@@ -1,10 +1,12 @@
 require_relative "book"
+require_relative "disc"
 require_relative "movie"
 
 class ItemCollection
   ITEM_TYPES = [
     {dir: "movies", item: Movie},
-    {dir: "books", item: Book}
+    {dir: "books", item: Book},
+    {dir: "discs", item: Disc}
   ]
 
   def self.from_dir(dir)
