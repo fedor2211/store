@@ -1,5 +1,9 @@
 class Item
-  attr_reader :price, :amount
+  attr_reader :price, :amount, :name
+
+  def self.from_file(path)
+    raise NotImplementedError
+  end
 
   def initialize(params)
     @price = params[:price]
