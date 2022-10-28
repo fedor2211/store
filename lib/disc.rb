@@ -23,6 +23,14 @@ class Disc < Item
     @year = params[:year]
   end
 
+  def update(params)
+    super
+    @album = params[:album] if params.key?(:album)
+    @artist = params[:artist] if params.key?(:artist)
+    @genre = params[:genre] if params.key?(:genre)
+    @year = params[:year] if params.key?(:year)
+  end
+
   def to_s
     "#{@artist} - #{@album}, #{@genre}, #{@year}, #{@price} (remaining #{@amount})"
   end
