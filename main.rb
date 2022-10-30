@@ -1,10 +1,10 @@
 require_relative "lib/book"
 require_relative "lib/item_collection"
 require_relative "lib/movie"
+require_relative "lib/shopping_cart"
 
 collection = ItemCollection.from_dir(File.join(__dir__, "data"))
-payment = 0
-purchases = []
+cart = ShoppingCart.new
 loop do
   puts "Select an item to buy:"
   puts
@@ -14,7 +14,7 @@ loop do
   input = gets
   puts
   index = input.to_i - 1
-  unless input.match?(/^\d+$/) && index < collection.to_a.size
+  unless input.match?(/\A\d+\Z/) && index < collection.to_a.size
     puts "Invalid choice. Please, try again."
     puts
     redo
@@ -27,17 +27,16 @@ loop do
     puts "Sorry, this item is not available at the moment."
     redo
   end
-  payment += selected_item.price
+  cart.add_item!(selected_item)
   selected_item.amount -= 1
-  purchases << selected_item
   puts "You chose #{selected_item}"
   puts
-  puts "Your payment is #{payment}"
+  puts "Cost of you purchases is #{cart.cost}"
   puts
 end
 
 puts "Your purchases:"
 puts
-purchases.each { |item| puts item }
+puts cart.items
 puts
-puts "Your payment is #{payment}. Thanks for your purchases!"
+puts "Your payment is #{cart.cost}. Thanks for your purchases!"
