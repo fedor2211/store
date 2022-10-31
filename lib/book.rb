@@ -29,6 +29,6 @@ class Book < Item
   end
 
   def to_s
-    "#{@title}, #{@genre}, written by #{@author}, price #{@price} (remaining #{@amount})"
+    "#{@title}, #{@genre}, written by #{@author}, price #{@price}"
   end
 end

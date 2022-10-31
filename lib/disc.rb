@@ -32,6 +32,6 @@ class Disc < Item
   end
 
   def to_s
-    "#{@artist} - #{@album}, #{@genre}, #{@year}, #{@price} (remaining #{@amount})"
+    "#{@artist} - #{@album}, #{@genre}, #{@year}, #{@price}"
   end
 end

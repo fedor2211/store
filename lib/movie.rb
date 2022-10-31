@@ -29,6 +29,6 @@ class Movie < Item
   end
 
   def to_s
-    "#{@title}, #{@year}, directed by #{@director}, price #{@price} (remaining #{@amount})"
+    "#{@title}, #{@year}, directed by #{@director}, price #{@price}"
   end
 end
