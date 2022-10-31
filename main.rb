@@ -46,4 +46,5 @@ puts "Your purchases:"
 puts
 puts cart
 puts
-puts "Your payment is #{cart.cost}. Thanks for your purchases!"
+puts "#{cart.items_amount} items, payment - #{cart.cost}"
+puts "Thanks for your purchases!"

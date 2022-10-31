@@ -11,6 +11,10 @@ class ShoppingCart
     @cost += item.price
   end
 
+  def items_amount
+    @items.values.inject(:+)
+  end
+
   def to_s
     @items.map { |item, amount| "(#{amount}) #{item}" }.join("\n")
   end
