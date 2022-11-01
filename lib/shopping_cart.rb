@@ -1,21 +1,23 @@
 class ShoppingCart
-  attr_reader :items, :cost
+  attr_reader :items
 
   def initialize
-    @items = Hash.new(0)
-    @cost = 0
+    @items = []
   end
 
   def add_item!(item)
-    @items[item] += 1
-    @cost += item.price
+    @items << item
   end
 
   def items_amount
-    @items.values.inject(:+)
+    @items.size
+  end
+
+  def cost
+    @items.map(&:price).sum
   end
 
   def to_s
-    @items.map { |item, amount| "(#{amount}) #{item}" }.join("\n")
+    @items.tally.map { |item, amount| "(#{amount}) #{item}" }.join("\n")
   end
 end
